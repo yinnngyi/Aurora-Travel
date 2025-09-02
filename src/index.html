@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aurora Travel</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/icon-auroraborealis.png">
+    <link rel="preload" as="style" crossorigin href="https://fontsapi.zeoseven.com/96/main/result.css"
+        onload="this.rel='stylesheet'" onerror="this.href='https://fontsapi-storage.zeoseven.com/96/main/result.css'" />
+    <noscript>
+        <link rel="stylesheet" href="https://fontsapi.zeoseven.com/96/main/result.css" />
+    </noscript>
+    <link rel="stylesheet" href="scss/main.scss" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <button id="btn-info"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M12,11a1,1,0,0,0-1,1v3a1,1,0,0,0,2,0V12A1,1,0,0,0,12,11Zm0-3a1,1,0,1,0,1,1A1,1,0,0,0,12,8Zm0-6A10,10,0,0,0,2,12a9.89,9.89,0,0,0,2.26,6.33l-2,2a1,1,0,0,0-.21,1.09A1,1,0,0,0,3,22h9A10,10,0,0,0,12,2Zm0,18H5.41l.93-.93a1,1,0,0,0,.3-.71,1,1,0,0,0-.3-.7A8,8,0,1,1,12,20Z"
+                    fill="#fff" />
+            </svg>
+        </button>
+        <div class="container">
+            <h1>Aurora Travel</h1>
+        </div>
+    </header>
+
+    <div id="info-content">
+        <button id="btn-close">
+            <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+                    fill="#6F7D91" />
+            </svg>
+        </button>
+        <h2>注意事項</h2>
+        <p>事前準備</p>
+        <ul>
+            <li>護照（至少6個月的有效期）</li>
+            <li>eTA 電子旅行授權許可證（11月中以前線上申請）</li>
+            <li>黃刀鎮旅行社尾款加幣現金 CAD $704.655</li>
+            <li>黃刀鎮小費現金（供參考：司機服務小費4天3晚CAD$35/每人）</li>
+            <li>保險、伙食費、手機網路等，請自行準備</li>
+        </ul>
+        <p>行前同意</p>
+        <ul>
+            <li>大家都是成年人了，請自行照顧身體狀況，若感疲憊或不適，隨時休息</li>
+            <li>非常歡迎大家自由活動，不勉強參加所有行程</li>
+            <li>黃刀鎮行程主要由旅行社導遊安排</li>
+        </ul>
+        <p>小提醒</p>
+        <ul>
+            <li>注意時差、氣溫、雪地氣候保暖、日照時間短</li>
+            <li>加拿大小費制度重，結帳金額可能+5%~20%</li>
+            <li>加拿大插座和台灣相同</li>
+            <li>黃刀鎮的飯店房間內有微波爐、烤麵包機，但牙刷牙膏要自備</li>
+        </ul>
+        <h4>祝我們有個愉快的旅程，看到極光此生無憾！</h4>
+    </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Tabs -->
+            <div class="tabs">
+                <div class="tab-list">
+                    <button class="tab-trigger active" data-tab="day1"><span class="tab-date">12/6</span>Day 1</button>
+                    <button class="tab-trigger" data-tab="day2"><span class="tab-date">12/7</span>Day 2</button>
+                    <button class="tab-trigger" data-tab="day3"><span class="tab-date">12/8</span>Day 3</button>
+                    <button class="tab-trigger" data-tab="day4"><span class="tab-date">12/9</span>Day 4</button>
+                    <button class="tab-trigger" data-tab="day5"><span class="tab-date">12/10</span>Day 5</button>
+                    <button class="tab-trigger" data-tab="day6"><span class="tab-date">12/11</span>Day 6</button>
+                    <button class="tab-trigger" data-tab="day7"><span class="tab-date">12/12</span>Day 7</button>
+                    <button class="tab-trigger" data-tab="day8"><span class="tab-date">12/13</span>Day 8</button>
+                    <button class="tab-trigger" data-tab="day9"><span class="tab-date">12/14</span>Day 9</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <!-- <span class="close">
+                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+                        fill="#fff" />
+                </svg>
+            </span> -->
+            <img id="modalImage">
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

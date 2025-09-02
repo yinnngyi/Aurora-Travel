@@ -1,0 +1,32 @@
+$text-primary: #1c1c1c;
+$text-light: #ccc;
+
+$primary: #007BFF;
+$primary-light: #E6F2FF;
+$accent: #3adc98;
+$background: #FFFFFF;
+$surface: #FAFAFA;
+$muted: #F1F6FA;
+$border: #D9E3F0;
+$text: #050D1A;
+$text-muted: #6F7D91;
+$shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-travel: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+$gradient-travel: linear-gradient(135deg, $primary, $accent);
+
+$brand-primary: $primary;
+$brand-secondary: $accent;
+
+$bg-white: $background;
+$bg-light: $surface;
+
+// Gradients
+$gradient-primary: linear-gradient(135deg, $brand-primary, $brand-secondary);
+$gradient-subtle: linear-gradient(180deg, $bg-white, $bg-light);
+
+// Shadows
+$shadow-soft: 0 4px 20px -2px rgba($brand-primary, 0.1);
+$shadow-medium: 0 8px 30px -4px rgba($brand-primary, 0.15);
+
+// Transitions
+$transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

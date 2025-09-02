@@ -1,0 +1,507 @@
+@import 'setting/variable';
+@import 'setting/breakpoint';
+@import 'setting/base';
+@import 'setting/tailwind.css';
+@import 'setting/all.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background: $gradient-travel;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  width: 100%;
+  h1 {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  p {
+    opacity: 0.9;
+    font-size: 1.1rem;
+  }
+}
+
+#btn-info, #btn-close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  svg {
+    width: 20px;
+  }
+}
+
+#info-content {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: -100%;
+  z-index: 9999999;
+  background: #FFF;
+  padding: 40px;
+  overflow: auto;
+  transition: top 0.3s ease;
+
+  h2 {
+    text-align: center;
+    color: $primary;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  ul {
+    margin-bottom: 24px;
+    li {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  }
+
+  h4 {
+    font-family: "辰宇落雁體 Thin";
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 1.2;
+    color: $primary;
+    padding: 8px 0 0;
+  }
+}
+
+.open #info-content {
+  top: 0;
+}
+
+/* Main Content */
+.main-content {
+  padding: 0;
+  width: 100%;
+}
+
+.sticky-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+}
+
+/* Tabs */
+.tabs {
+  width: 100%;
+
+  .tab-list {
+    display: flex;
+    box-shadow: $shadow;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .tab-trigger {
+    border: none;
+    background: white;
+    border-right: 1px solid $border;
+    padding: 8px 24px 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: nowrap;
+
+    &.active {
+      border-bottom: 2px solid $primary;
+      color: $primary;
+      font-weight: 500;
+    }
+
+    &:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .tab-date {
+      display: block;
+      font-size: 12px;
+      line-height: 1;
+      color: $text-muted;
+    }
+  }
+}
+
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  padding: 16px 24px;
+
+  &.active {
+    display: block;
+  }
+
+  .day-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+      color: $primary;
+      font-weight: 500;
+    }
+    .date {
+      font-size: 12px;
+      color: $text-muted;
+    }
+  }
+  .day-note {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $text-muted;
+  }
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding: 16px 0 16px;
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 8px;
+    .time-badge {
+      position: absolute;
+      left: -16px;
+      top: 4px;
+      color: $primary;
+      font-size: 12px;
+      text-align: right;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 20px;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      background: $primary;
+      border-radius: 50%;
+      border: 4px solid $background;
+      box-shadow: $shadow-travel;
+      z-index: 10;
+    }
+
+    .timeline-line {
+      position: absolute;
+      top: 8px;
+      left: 27px;
+      width: 2px;
+      height: calc(100% + 20px);
+      background: $border;
+    }
+
+    &:last-child .timeline-line {
+      display: none;
+    }
+
+    .timeline-content {
+      padding-top: 12px;
+      margin-left: 48px;
+    }
+  }
+}
+
+/* Timeline Content */
+.timeline-content {
+  .travel-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: $shadow;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid $border;
+
+    &:hover {
+      box-shadow: $shadow-travel;
+      transform: translateY(-2px);
+
+      .titles h3 {
+        color: $primary;
+      }
+
+      .image-overlay {
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .card-content {
+      padding: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-direction: row;
+    }
+
+    .image-container {
+      position: relative;
+      width: 6rem;
+      height: 4rem;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .travel-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .text-content {
+      flex: 1;
+      min-width: 0;
+
+      .card-header {
+        display: flex;
+        justify-content: between;
+        align-items: flex-start;
+        flex-direction: row;
+
+        .titles {
+          flex: 1;
+
+          h3 {
+            font-size: 16px;
+            font-weight: 500;
+            color: $text;
+            transition: color 0.2s ease;
+            margin-bottom: 0;
+            line-height: 1.4;
+          }
+
+          p {
+            color: $text-muted;
+            font-size: 14px;
+            line-height: 1.2;
+            margin-top: 4px;
+          }
+        }
+
+        .expand-btn {
+          color: $text-muted;
+          transition: color 0.2s ease;
+          display: flex;
+
+          &:hover {
+            color: $primary;
+          }
+
+          svg {
+            width: 16px;
+            height: 26px;
+            transform: rotate(-90deg);
+            transition: transform 0.2s ease;
+          }
+
+          &.expanded svg {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+
+    .expanded-content {
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid $border;
+      animation: slideDown 0.2s ease-out;
+      display: none;
+      font-size: 14px;
+
+      &.show {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 8px;
+      }
+
+      a:not(.map-link) {
+        color: $primary;
+        text-decoration: underline;
+      }
+
+      a.map-link {
+        background-color: $primary-light;
+        font-size: 12px;
+        padding: 4px 12px 4px 8px;
+        border-radius: 9999999px;
+        svg {
+          width: 16px;
+          height: 16px;
+          position: relative;
+          top: 2.5px;
+        }
+      }
+    }
+  }
+
+  .transportation {
+    display: flex;
+    gap: 0.75rem;
+    color: $text-muted;
+    font-size: 12px;
+  }
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  &.show {
+    display: block;
+  }
+
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+  }
+
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.8);
+    }
+  }
+
+  #modalImage {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .timeline {
+    padding-left: 1rem;
+
+    .timeline-content {
+      margin-left: 1.5rem;
+    }
+  }
+
+  .card-content {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .image-container {
+    width: 100%;
+    height: 8rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .expand-btn {
+    align-self: flex-start;
+    margin-left: 0;
+  }
+}
