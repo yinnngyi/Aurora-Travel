@@ -20,6 +20,7 @@
 
 /* Header */
 .header {
+  position: relative;
   background: $gradient-travel;
   color: white;
   padding: 2rem 0;
@@ -50,11 +51,16 @@
   height: 100vh;
   position: fixed;
   top: -100%;
+  left: 50%;
+  transform: translate(-50%, 0%);
   z-index: 9999999;
   background: #FFF;
   padding: 40px;
   overflow: auto;
   transition: top 0.3s ease;
+  max-width: 768px;
+  box-shadow: $shadow;
+  opacity: 0;
 
   h2 {
     text-align: center;
@@ -87,6 +93,7 @@
 
 .open #info-content {
   top: 0;
+  opacity: 1;
 }
 
 /* Main Content */
@@ -98,10 +105,15 @@
 .sticky-top {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
   z-index: 1000;
   background: white;
+  @media (min-width: 768px) {
+    &.tab-list .tab-trigger {
+      padding: 12px 24px;
+    }
+  }
 }
 
 /* Tabs */
@@ -109,6 +121,7 @@
   width: 100%;
 
   .tab-list {
+    max-width: 768px;
     display: flex;
     box-shadow: $shadow;
     overflow-x: auto;
@@ -129,6 +142,7 @@
     font-size: 14px;
     line-height: 1.4;
     white-space: nowrap;
+    width: 100%;
 
     &.active {
       border-bottom: 2px solid $primary;
@@ -153,7 +167,10 @@
 /* Tab Content */
 .tab-content {
   display: none;
-  padding: 16px 24px;
+  padding: 40px;
+  @media (max-width: 768px) {
+    padding: 16px 24px;
+  }
 
   &.active {
     display: block;
@@ -166,6 +183,9 @@
     .title {
       color: $primary;
       font-weight: 500;
+      @media (min-width: 768px) {
+        font-size: 20px;
+      }
     }
     .date {
       font-size: 12px;
@@ -183,7 +203,7 @@
 /* Timeline */
 .timeline {
   position: relative;
-  padding: 16px 0 16px;
+  padding: 16px 16px 0px;
 
   .timeline-item {
     position: relative;
@@ -474,14 +494,6 @@
   .header {
     h1 {
       font-size: 2rem;
-    }
-  }
-
-  .timeline {
-    padding-left: 1rem;
-
-    .timeline-content {
-      margin-left: 1.5rem;
     }
   }
 
