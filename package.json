@@ -3,8 +3,6 @@
   "scripts": {
     "dev": "rm -rf .parcel-cache && parcel './src/*.html' './src/js/*.js' './src/js/*/*.js' './src/scss/*.scss' './src/scss/*/*.scss' './src/audio/*.*' './src/audio/*/*.*' './src/images/*.*' './src/images/*/*.*' --host 0.0.0.0",
     "prod": "rm -rf dist && parcel build './src/*.html' './src/js/*.js' './src/scss/*.scss' './src/audio/*.*' './src/audio/*/*.*' './src/images/*.*' './src/images/*/*.*' --public-url . --no-cache",
-    "build": "parcel build index.html --dist-dir dist --public-url ./",
-    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@gatsbyjs/parcel-namer-relative-to-cwd": "^2.11.0",
