@@ -123,6 +123,18 @@
     $('.tab-content').removeClass('active');
     $(`.tab-content[data-tab="${targetTab}"]`).addClass('active');
 
+    const offset = $(this).position().left; // tab 相對 container 左邊的距離
+    const containerWidth = $('.tab-list').width();
+    const tabWidth = $(this).outerWidth();
+
+    // 計算讓 tab 置中的 scrollLeft
+    const scrollTo = $('.tab-list').scrollLeft() + offset - containerWidth / 2 + tabWidth / 2;
+
+    $('.tab-list').animate({ scrollLeft: scrollTo }, 200);
+
+    const goToTop = $('.main-content').offset().top;
+    $('html, body').animate({ scrollTop: goToTop }, 100);
+
     // 更新網址錨點（可選）
     history.replaceState(null, null, `#${$(this).index() + 1}`);
   });
@@ -223,9 +235,9 @@
     const scrollTop = $(window).scrollTop();
 
     if (scrollTop >= initialOffsetTop) {
-      $main.addClass('sticky-top');
+      $('body').addClass('sticky-top');
     } else {
-      $main.removeClass('sticky-top');
+      $('body').removeClass('sticky-top');
     }
   });
 })();
