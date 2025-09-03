@@ -107,7 +107,7 @@ window.data = {
       {
         time: '',
         title: '飯店週邊購物資訊',
-        subtitle: '飯店步行 5-8 分鐘',
+        subtitle: '飯店步行 5-8 分鐘，可以留到最後一天逛',
         expanded: {
           note: [
             `<ul>
@@ -117,13 +117,7 @@ window.data = {
               <li>📷 打卡地標：溫度計 <a class="map-link" target="_blank" rel="noopener noreferrer" href="https://maps.app.goo.gl/HfMBZsbUDAbnoxGn9">YK Center Clock</a></li>
             </ul>`
           ]
-        },
-        transportation: [
-          {
-            method: 'walk',
-            duration: ''
-          }
-        ]
+        }
       },
       {
         time: '???',
@@ -282,16 +276,51 @@ window.data = {
     },
     schedule: [
       {
+        time: '10:00',
+        title: '威爾斯親王北方文化遺產中心博物館',
+        subtitle: '這是自由活動，在飯店附近',
+        expanded: {
+          note: ['$free'],
+          map: {
+            text: 'Prince of Wales Northern Heritage Centre',
+            link: 'https://maps.app.goo.gl/Ve5f5GhB8xMWMpvD8'
+          }
+        },
+        transportation: [
+          {
+            method: 'bus',
+            duration: '市區搭車，10min，現金 CAD $3'
+          }
+        ]
+      },
+      {
+        time: '12:00',
+        title: '🍺 釀酒廠餐廳',
+        subtitle: '午餐，12-14，週一休息',
+        expanded: {
+          map: {
+            text: 'NWT Brewing Company / The Woodyard Brewhouse & Eatery',
+            link: 'https://maps.app.goo.gl/kdNFrJTus2zoefWCA'
+          },
+          note: [``]
+        },
+        transportation: [
+          {
+            method: 'bus',
+            duration: '10min 現金 CAD $3'
+          }
+        ]
+      },
+      {
         time: '???',
         title: '自由活動',
         subtitle: '市區亂逛',
         expanded: {
           note: [
             `<ul>
-              <li>咖啡貝果 <a class="map-link" href="https://maps.app.goo.gl/HcQgBfoew58y3jPV7" target="_blank" rel="noopener noreferrer">Birchwood</a></li>
+              <li>貝果、原住民傳統麵包 Bannock <a class="map-link" href="https://maps.app.goo.gl/HcQgBfoew58y3jPV7" target="_blank" rel="noopener noreferrer">Birchwood</a></li>
               <li>甜甜圈 <a class="map-link" href="https://maps.app.goo.gl/Zdx3itYKYwbW6hpg8" target="_blank" rel="noopener noreferrer">Tim Hortons</a></li>
               <li>咖啡廳 <a class="map-link" href="https://maps.app.goo.gl/B3r8yp6qCrCw73Ph6" target="_blank" rel="noopener noreferrer">Te Adoro Cafe & Bar</a></li>
-              <li>釀酒廠餐廳 <a class="map-link" href="https://maps.app.goo.gl/kdNFrJTus2zoefWCA" target="_blank" rel="noopener noreferrer">NWT Brewing Company / The Woodyard Brewhouse & Eatery</a><br>16:00–22:00，距離飯店 1.7km</li>
             </ul>`
           ]
         },
@@ -304,30 +333,14 @@ window.data = {
       },
       {
         time: '???',
-        title: '威爾斯親王北方文化遺產中心博物館',
-        subtitle: '$free，在飯店附近',
-        expanded: {
-          map: {
-            text: 'Prince of Wales Northern Heritage Centre',
-            link: 'https://maps.app.goo.gl/Ve5f5GhB8xMWMpvD8'
-          }
-        },
+        title: '🍜 晚餐：？？？',
+        subtitle: '導遊建議（自費）or自理',
         transportation: [
           {
             method: 'walk',
             duration: ''
           }
         ]
-      },
-      {
-        time: '???',
-        title: '🍔 午餐：？？？',
-        subtitle: '導遊建議（自費）or自理'
-      },
-      {
-        time: '???',
-        title: '🍜 晚餐：？？？',
-        subtitle: '導遊建議（自費）or自理'
       },
       {
         time: '???',
@@ -630,8 +643,8 @@ window.data = {
         subtitle: '戶外海洋動物區有海獺、4D電影、亞馬遜森林、深淵怪獸',
         expanded: {
           map: {
-            text: 'A&W Canada',
-            link: 'https://maps.app.goo.gl/9id2ZmHJhSKzuyvN7'
+            text: 'Vancouver Aquarium',
+            link: 'https://maps.app.goo.gl/6t9W3EsaFwo1Cyf4A'
           }
         },
         transportation: [

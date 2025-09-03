@@ -103,16 +103,8 @@
 }
 
 .sticky-top {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0%);
-  z-index: 1000;
-  background: white;
-  @media (min-width: 768px) {
-    &.tab-list .tab-trigger {
-      padding: 12px 24px;
-    }
+  .main-content {
+    padding-top: 48px;
   }
 }
 
@@ -129,6 +121,9 @@
     -ms-overflow-style: none;
     &::-webkit-scrollbar {
       display: none;
+    }
+    @media (max-width: 768px) {
+      max-width: 100vw;
     }
   }
 
@@ -163,13 +158,30 @@
   }
 }
 
+.sticky-top {
+  .tab-list {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: 1000;
+    background: white;
+
+    @media (min-width: 768px) {
+      &.tab-list .tab-trigger {
+        padding: 12px 24px;
+      }
+    }
+  }
+}
+
 
 /* Tab Content */
 .tab-content {
   display: none;
   padding: 40px;
   @media (max-width: 768px) {
-    padding: 16px 24px;
+    padding: 16px 16px;
   }
 
   &.active {
@@ -203,7 +215,7 @@
 /* Timeline */
 .timeline {
   position: relative;
-  padding: 16px 16px 0px;
+  padding: 16px 0 0 16px;
 
   .timeline-item {
     position: relative;
